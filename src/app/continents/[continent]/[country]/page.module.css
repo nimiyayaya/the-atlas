@@ -1,0 +1,21 @@
+.routeMeta {
+  position: fixed;
+  top: 1.25rem;
+  left: clamp(1.25rem, 4vw, 3rem);
+  z-index: 30;
+}
+
+.backLink {
+  color: #f4ecdf;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .routeMeta {
+    top: 1rem;
+    left: 1rem;
+  }
+}

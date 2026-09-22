@@ -1,0 +1,203 @@
+.page {
+  min-height: 100vh;
+  padding: 3rem 5vw 5rem;
+  background-color: #d8c58e;
+  background-image:
+    linear-gradient(rgba(255, 250, 230, 0.4), rgba(255, 250, 230, 0.4)),
+    url("/reference images/Paper BG.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: screen, normal;
+  background-attachment: fixed;
+  color: #382a1d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.backLink {
+  color: #6e563c;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  transition: color 180ms ease;
+}
+
+.backLink:hover {
+  color: #b38a52;
+}
+
+.content {
+  max-width: 72rem;
+  margin: 7rem auto 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: #775d41;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.content h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 9vw, 9rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.86;
+}
+
+.note {
+  margin: 1.4rem 0 2.8rem;
+  color: #6e563c;
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 1.8;
+  overflow: hidden;
+  border: 3px solid rgba(62, 39, 19, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px rgba(63, 40, 18, 0.28);
+}
+
+.imageFrame::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 4, 2, 0.55),
+    transparent 65%
+  );
+  content: "";
+}
+
+.image {
+  object-fit: cover;
+}
+
+.countrySection {
+  margin-top: 2.5rem;
+}
+
+.countryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.countryCard {
+  display: block;
+  color: #f5ead2;
+}
+
+.cardImageFrame {
+  position: relative;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  border: 2px solid rgba(62, 39, 19, 0.72);
+  border-radius: 8px;
+  box-shadow: 0 16px 30px rgba(45, 24, 8, 0.2);
+  background: #9a8155;
+}
+
+.cardImageFrame::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 4, 2, 0.7) 0%,
+    rgba(10, 4, 2, 0.38) 34%,
+    rgba(10, 4, 2, 0.08) 62%,
+    rgba(10, 4, 2, 0) 78%
+  );
+  content: "";
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.cardImage {
+  object-fit: cover;
+  filter: saturate(0.85) contrast(0.95);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
+}
+
+.countryCard:hover .cardImage {
+  filter: saturate(1) contrast(1);
+  transform: scale(1.04);
+}
+
+.countryCard:hover .cardImageFrame::after {
+  opacity: 0;
+}
+
+.countryIndex {
+  position: absolute;
+  z-index: 2;
+  top: 0.9rem;
+  left: 0.9rem;
+  display: flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(196, 156, 90, 0.72);
+  color: #f6eddf;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cardMeta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  padding: 2.8rem 1.15rem 0.9rem;
+}
+
+.countryName {
+  display: block;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.arrow {
+  position: absolute;
+  right: 1.15rem;
+  bottom: 0.72rem;
+  color: #f5ead2;
+  font-size: 1.05rem;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.countryCard:hover .arrow {
+  color: #936d35;
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding: 2rem 7vw 4rem;
+  }
+
+  .content {
+    margin-top: 5rem;
+  }
+
+  .countryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .countryGrid {
+    grid-template-columns: 1fr;
+  }
+}

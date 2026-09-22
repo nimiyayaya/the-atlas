@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2d1d13"/>
+      <stop offset="35%" stop-color="#6e4831"/>
+      <stop offset="100%" stop-color="#d7b581"/>
+    </linearGradient>
+    <linearGradient id="overlay" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="rgba(18,12,9,0.00)"/>
+      <stop offset="100%" stop-color="rgba(17,11,9,0.62)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1180" cy="220" r="240" fill="rgba(240,214,167,0.18)"/>
+  <circle cx="430" cy="760" r="260" fill="rgba(21,14,10,0.18)"/>
+  <path d="M0 720 C 240 640, 360 560, 520 610 S 900 780, 1600 660 L1600 1000 L0 1000 Z" fill="rgba(18,10,7,0.20)"/>
+  <rect width="1600" height="1000" fill="url(#overlay)"/>
+  <text x="110" y="860" fill="#f4ebdc" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="600" letter-spacing="8">Mexico</text>
+  <text x="110" y="920" fill="rgba(241, 229, 212, 0.78)" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="10">THE ATLAS</text>
+</svg>

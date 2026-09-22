@@ -1,0 +1,122 @@
+.page {
+  min-height: 100vh;
+  padding: 4rem 5vw 5rem;
+  background-color: #d8c58e;
+  background-image:
+    linear-gradient(rgba(255, 250, 230, 0.4), rgba(255, 250, 230, 0.4)),
+    url("/reference images/Paper BG.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: screen, normal;
+  background-attachment: fixed;
+  color: #221b16;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  max-width: 70rem;
+  margin: 0 auto 2rem;
+}
+
+.backLink {
+  color: #5f4732;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin-top: 1.2rem;
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: -0.06em;
+}
+
+.placeholder {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(62, 39, 19, 0.18);
+  background: rgba(255, 248, 236, 0.35);
+  color: #413226;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.directoryMeta {
+  display: flex;
+  max-width: 70rem;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 auto 1.2rem;
+  color: #5f4732;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.directoryMeta p {
+  margin: 0;
+}
+
+.directoryMeta span {
+  color: #806b58;
+  font-size: 0.62rem;
+}
+
+.regionGrid {
+  display: grid;
+  max-width: 70rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.regionCard {
+  min-height: 8rem;
+  padding: 1.1rem;
+  border: 2px solid rgba(62, 39, 19, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 248, 236, 0.35);
+  box-shadow: 0 8px 18px rgba(45, 24, 8, 0.12);
+}
+
+.regionCode {
+  color: #806b58;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.regionCard h2 {
+  margin-top: 1rem;
+  color: #2e231b;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.regionCard p {
+  margin-top: 0.55rem;
+  color: #6e563c;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .regionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .directoryMeta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .regionGrid {
+    grid-template-columns: 1fr;
+  }
+}

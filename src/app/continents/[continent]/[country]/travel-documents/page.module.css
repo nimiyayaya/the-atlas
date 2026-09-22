@@ -1,0 +1,97 @@
+.page {
+  min-height: 100vh;
+  padding: 3rem 5vw 6rem;
+  background-color: #d8c58e;
+  background-image:
+    linear-gradient(rgba(255, 250, 230, 0.4), rgba(255, 250, 230, 0.4)),
+    url("/reference images/Paper BG.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: screen, normal;
+  background-attachment: fixed;
+  color: #2e231b;
+}
+
+.backLink {
+  color: #6e563c;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.content {
+  max-width: 64rem;
+  margin: 8rem auto 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  color: #7d6147;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.content h1 {
+  max-width: 48rem;
+  margin: 0;
+  color: #1d120d;
+  font-size: clamp(3rem, 8vw, 8rem);
+  letter-spacing: -0.06em;
+  line-height: 0.88;
+}
+
+.introduction {
+  max-width: 48rem;
+  margin: 2rem 0 3rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  line-height: 1.7;
+}
+
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.checklist article {
+  min-height: 10rem;
+  padding: 1.4rem;
+  border: 1.5px solid rgba(83, 58, 38, 0.3);
+  border-radius: 4px;
+  background: rgba(254, 249, 239, 0.32);
+  box-shadow: 0 7px 16px rgba(45, 28, 16, 0.1);
+}
+
+.checklist h2 {
+  margin: 0 0 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.checklist p,
+.notice {
+  margin: 0;
+  color: #3e3127;
+  line-height: 1.7;
+}
+
+.notice {
+  margin-top: 2rem;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 2rem 7vw 4rem;
+  }
+
+  .content {
+    margin-top: 5rem;
+  }
+
+  .checklist {
+    grid-template-columns: 1fr;
+  }
+}

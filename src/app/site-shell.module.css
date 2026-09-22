@@ -1,0 +1,301 @@
+.navigationRegion {
+  position: fixed;
+  z-index: 20;
+  top: 2rem;
+  right: 0;
+  width: 5.5rem;
+  height: 3rem;
+  transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navigationRegionOpen {
+  top: 0;
+  height: 100vh;
+  width: min(23.04rem, 28.8vw);
+}
+
+.menuButton,
+.closeButton {
+  position: fixed;
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: url("/images/compass-cursor.svg") 16 16, auto;
+}
+
+.menuButton {
+  position: absolute;
+  z-index: 2;
+  top: 0.8rem;
+  right: 3rem;
+  width: 2rem;
+  height: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.menuButton span {
+  display: block;
+  height: 1px;
+  background: #6e563c;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  transition: background-color 180ms ease;
+}
+
+.menuButtonContinents span {
+  background: #6e563c;
+}
+
+.menuButtonHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navigationRegionOpen .menuButton {
+  top: 2.8rem;
+}
+
+.menuButton span:nth-child(1),
+.menuButton span:nth-child(3) {
+  width: 20px;
+}
+
+.menuButton span:nth-child(2) {
+  width: 14px;
+}
+
+.menuButton:hover span {
+  background: #b38a52;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: min(23.04rem, 28.8vw);
+  height: 100vh;
+  padding: 2.8rem clamp(1.25rem, 3.2vw, 3rem);
+  flex-direction: column;
+  background-color: #d8c39b;
+  background-image:
+    linear-gradient(rgba(110, 86, 60, 0.05), rgba(110, 86, 60, 0.05)),
+    linear-gradient(rgba(255, 247, 227, 0.42), rgba(255, 247, 227, 0.42)),
+    url("/reference images/Paper BG.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: screen, overlay, normal;
+  border-left: 1px solid rgba(79, 42, 13, 0.34);
+  box-shadow: -18px 0 42px rgba(0, 0, 0, 0.24);
+  color: #2d2015;
+  transform: translateX(100%);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  clip-path: polygon(
+    0 0,
+    14% 0.35%,
+    29% 0,
+    46% 0.25%,
+    64% 0,
+    82% 0.35%,
+    100% 0,
+    100% 100%,
+    81% 99.5%,
+    62% 100%,
+    44% 99.65%,
+    25% 100%,
+    0 99.7%,
+    1.5% 94%,
+    0.2% 88%,
+    1.8% 82%,
+    0.4% 76%,
+    1.4% 70%,
+    0.1% 64%,
+    1.7% 58%,
+    0.3% 52%,
+    1.5% 46%,
+    0.2% 40%,
+    1.8% 34%,
+    0.4% 28%,
+    1.4% 22%,
+    0.2% 16%,
+    1.6% 10%,
+    0.3% 4%
+  );
+}
+
+.sidebar::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 0 8%, rgba(105, 73, 39, 0.22), transparent 14%),
+    radial-gradient(ellipse at 0 33%, rgba(120, 89, 53, 0.18), transparent 12%),
+    radial-gradient(ellipse at 0 59%, rgba(96, 68, 38, 0.22), transparent 14%),
+    radial-gradient(ellipse at 0 88%, rgba(108, 74, 44, 0.2), transparent 13%),
+    radial-gradient(ellipse at 100% 4%, rgba(95, 72, 40, 0.14), transparent 12%),
+    radial-gradient(ellipse at 100% 97%, rgba(90, 65, 36, 0.18), transparent 14%);
+  border: 1px solid rgba(79, 42, 13, 0.24);
+  box-shadow:
+    inset 0 0 26px 8px rgba(94, 68, 37, 0.12),
+    inset 0 0 8px 2px rgba(50, 20, 3, 0.1);
+  content: "";
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(45, 34, 25, 0.16);
+}
+
+.sidebarLabel {
+  color: #493a2d;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.sidebarCount {
+  color: #493a2d;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+
+.closeButton {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton span {
+  position: absolute;
+  width: 22px;
+  height: 1px;
+  background: #fff;
+  transition: background-color 180ms ease;
+}
+
+.closeButton span:first-child {
+  transform: rotate(45deg);
+}
+
+.closeButton span:last-child {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover span {
+  background: #b38a52;
+}
+
+.nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  padding-top: 1.9rem;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nav a {
+  display: grid;
+  min-height: 6.6rem;
+  grid-template-columns: 2.2rem 1fr auto;
+  align-items: center;
+  column-gap: 1rem;
+  border-bottom: 1px solid rgba(45, 34, 25, 0.1);
+  color: #352d26;
+  transition: color 180ms ease, padding 180ms ease;
+}
+
+.nav a:hover {
+  padding-left: 0.35rem;
+  color: #9a7138;
+}
+
+.navIndex {
+  color: #625344;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.navCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.navCopy strong {
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1;
+}
+
+.navCopy small {
+  color: #625344;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+
+.navArrow {
+  color: #776c62;
+  font-size: 1.05rem;
+  font-weight: 300;
+  transition: color 180ms ease;
+}
+
+.nav a:hover .navArrow {
+  color: #9a7138;
+}
+
+.sidebarNote {
+  position: relative;
+  z-index: 1;
+  max-width: 15rem;
+  margin-top: auto;
+  color: #625344;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .menuButton {
+    top: 0;
+    right: 2rem;
+  }
+
+  .navigationRegion {
+    width: 4.5rem;
+  }
+
+  .navigationRegionOpen {
+    top: 0;
+    width: min(15.84rem, 56.4vw);
+  }
+
+  .sidebar {
+    width: min(15.84rem, 56.4vw);
+    padding-top: 2rem;
+  }
+
+  .navigationRegionOpen .menuButton {
+    top: 2rem;
+  }
+}
